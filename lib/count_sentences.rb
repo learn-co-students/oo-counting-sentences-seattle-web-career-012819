@@ -17,7 +17,9 @@ class String
   def count_sentences
     sentence_array = self.split(" ")
     #binding.pry
-    counter = sentence_array.map {|word| word.question? | word.sentence? | word.exclamation?}
-    counter.count(true)
+    #counter = sentence_array.map {|word| word.question? | word.sentence? | word.exclamation?}
+    #counter.count(true)
+    sentence_array.keep_if{|word| word.question? | word.sentence? | word.exclamation?}
+    return sentence_array.length
   end
 end
