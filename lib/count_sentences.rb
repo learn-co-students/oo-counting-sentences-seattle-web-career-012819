@@ -16,13 +16,8 @@ class String
 
   def count_sentences
     words1 = self.split(".")
-    words2 = words1.map do |element|
-      element.split("?")
-    end
-    words3 = words2.flatten.map do
-      |element| element.split("!")
-    end
-    binding.pry
+    words2 = words1.map { |element| element.split("?")}
+    words3 = words2.flatten.map { |element| element.split("!")}
     words3.flatten.reject(&:empty?).count
   end
 end
