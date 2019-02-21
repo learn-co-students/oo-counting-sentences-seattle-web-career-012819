@@ -1,4 +1,4 @@
-# require 'pry'
+require 'pry'
 
 class String
 
@@ -16,13 +16,7 @@ class String
 
   def count_sentences
     arr = [self.split(/[.!?]/)].flatten!
-    arr = arr.reject do |str|
-      str.empty?
-    end
-
+    arr = arr.reject { |str| str.empty? }
     arr.length
   end
 end
-
-# binding.pry
-0
