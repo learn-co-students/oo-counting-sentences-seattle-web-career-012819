@@ -15,15 +15,8 @@ class String
   end
 
   def count_sentences
-    arr = self.split(/[.!?]/)
-
-    arr = arr.delete_if do |str|
-      str == ""
-    end
-
+    arr = [self.split(/[.!?]/)].flatten!
+    arr = arr.reject { |str| str.empty? }
     arr.length
   end
 end
-
-# binding.pry
-0
